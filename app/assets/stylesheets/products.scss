@@ -40,6 +40,18 @@ main section.categories-show {
         transition: all 0.3s;
       }
 
+      aside.Soldout {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 110px;
+        padding: 10px;
+        background-color: lightpink;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        font-size: 0.8em;
+      }
+
       aside.price {
         position: absolute;
         top: 0;
