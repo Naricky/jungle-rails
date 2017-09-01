@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
+  resources :posts, only: [:index, :edit]
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -23,6 +25,8 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :show]
+
+
   end
 
 
