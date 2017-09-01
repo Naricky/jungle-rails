@@ -1,0 +1,20 @@
+Hi
+
+You have successfully placed an order with us.
+Please find the details of order:
+
+    <div>
+      <% totalprice = 0 %>
+      <% @order.line_items.each do |item| %>
+        <p>Total Price in Dollars  - <%= item.total_price_cents%>
+        </p>
+        <p>Product Name - <%= item.product.name%></p>
+        <p>Product Description - <%= item.product.description%></p>
+        <p>Product Quantity - <%= item.quantity%></p>
+        <p>Product Image - </p>
+        <%= image_tag item.product.image.url, class: 'main-img' %>
+        <p> <% totalprice += item.total_price_cents %> </p>
+    </div>
+      <% end %>
+    <p>Total price all together is... <%= totalprice.round/ 100.0 %></p>
+    </div>
