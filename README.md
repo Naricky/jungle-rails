@@ -15,11 +15,15 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
-## Stripe Testing
+## Usage
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Install dependencies at project root by bundle install.
+Reset Database by bin/rake db:reset ( creating loading and seeding db)
+Run `bin/rails s -b 0.0.0.0` to start the server
 
-More information in their docs: <https://stripe.com/docs/testing#cards>
+## Screenshots
+
+
 
 ## Dependencies
 
@@ -27,19 +31,3 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
-
-def create
-    @product = Product.find params[:product_id]
-    @review = @product.reviews.create(review_params)
-    @review.user_id = current_user.id
-
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to product_path(@product), notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
-    end
-  end
