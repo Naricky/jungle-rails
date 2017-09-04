@@ -26,3 +26,20 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+def create
+    @product = Product.find params[:product_id]
+    @review = @product.reviews.create(review_params)
+    @review.user_id = current_user.id
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to product_path(@product), notice: 'Review was successfully created.' }
+        format.json { render :show, status: :created, location: @review }
+      else
+        format.html { render :new }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
+    end
+  end

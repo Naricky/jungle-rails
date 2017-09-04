@@ -1,13 +1,13 @@
-<section class="orders-show">
+<!DOCTYPE html>
+<html>
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
+<section>
 
- <div class="order-summary jumbotron">
-   <h4>Thank you for your order!</h4>
-   <h4><%= @order.email %></h4>
- </div>
+Hi
+
+You have successfully placed an order with us.
+Please find the details of order:
+
     <div>
       <% totalprice = 0 %>
       <% @order.line_items.each do |item| %>
@@ -24,9 +24,6 @@
     <p>Total price all together is... <%= totalprice.round/ 100.0 %></p>
     </div>
 
-
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
 </section>
 
+</html>

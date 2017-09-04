@@ -85,4 +85,21 @@ main section.products-show {
   }
 }
 
+#navbar > ul:nth-child(1) > a {
+
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 10px;
+
+}
+
+#new_review {
+
+  float:right;
+}
+
+body > main > section > article > div:nth-child > div:nth-child > dl{
+
+  float:right;
+}
 
