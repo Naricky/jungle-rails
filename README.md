@@ -23,6 +23,8 @@ Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Screenshots
 
+![Screenshot](ScreenShot1.png)
+![Screenshot2](ScreenShot2.png)
 
 
 ## Dependencies
